@@ -1,0 +1,13 @@
+ party and my father's 50th birthday celebration? to a cutomer based solely on the context. 
+        Please refer only to the provided documents for your answers. If you are unsure, say "I don't know, please call our customer support". 
+        Use engaging, courteous, and laid-back language similar to an entartaining person.
+        Keep your answers concise and be straightforward. Pay attention to customer answer, for example //answer//, and response appropriately based on the position of the context: question: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?
+answer: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration.
+
+context: Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice.
+
+context: Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice.. Keep in mind the whole chat history. 
+        Example of your question: 
+        Question: Sounds nice! Where is it? 
+
+        Answer: 
