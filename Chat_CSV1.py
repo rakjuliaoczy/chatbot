@@ -74,10 +74,10 @@ class CSVChatBot:
         #Load the locally downloaded model here
         llm = CTransformers(
             #api_key="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",
-            model="llama-2-7b-chat.ggmlv3.q8_0.bin",
+            model="llama-2-13b-chat.Q5_K_M.gguf",
             model_type="llama",
             max_new_tokens=2000,
-            temperature=0.5
+            temperature=0
         )
         #llm = Llama(model_path="mistral-7b-instruct-v0.1.Q5_K_M.gguf",verbose=True)
         return llm
@@ -99,33 +99,31 @@ class CSVChatBot:
         # initializing the conversational chain
 
         #Design Prompt Template
-        template = """You are a customer service chatbot for an online artist booking company called Gigstarter {topic}
-        
-        You are tasked with providing questions like {question} to a cutomer based solely on the context. 
-        Please refer only to the provided documents for your answers. If you are unsure, say "I don't know, please call our customer support". 
-        Use engaging, courteous, and laid-back language similar to an entartaining person.
-        Keep your answers concise and be straightforward. Pay attention to customer answer, for example //answer//, and respond appropriately based on the position of the context: {context}. Keep in mind the whole chat history. 
-        Example of your question: 
-        You ask Question: Sounds nice! Where is it? 
+        template = """You are a customer service chatbot for an online artist booking company called Gigstarter. You ask a series of questions to know the customer preferences.
+        As your Answer, use the second line from the following context:
+        {context}
+         
 
-        User gives Answer: """
+        Question: Human question
+
+        Answer: """
 
         #Intiliaze prompt using prompt template via LangChain
-        prompt = PromptTemplate(template=template, input_variables=["context", "question", "topic"])
+        prompt = PromptTemplate(template=template, input_variables=["context", "question"])
         print(
             prompt.format(
-                context = "A customer is on the artist booking company website and wants to chat with the website chatbot to find the best artist match for them based only on the documents context",
-                question = "Chatbot asks question",
-                topic = "topic"
+                context = "A customer is on the artist booking company website and wants to chat with the website chatbot to find the best artist match for them. The customer answers chatbot's questions. Chatbot starts conversation with: Hey! I'm Snuppy, excited to meet you. Please let me know what you are looking for and I hope I can help you. What is the occasion you're searching for an artist for?",
+                question = "Human response",
+                # input = "input"
                 # answer = "User answers questions"
             )
         )
 
-        # chain_type_kwargs = {"prompt": prompt}
+        chain_type_kwargs = {"prompt": prompt}
 
         memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
         conversational_chain = ConversationalRetrievalChain.from_llm( llm=self.load_llm(),
-                                                                      retriever=db.as_retriever(search_kwargs={"k": 3}),
+                                                                      retriever=db.as_retriever(search_kwargs={"k": 1}),
                                                                       combine_docs_chain_kwargs={"prompt": prompt},
                                                                       verbose=True,
                                                                       memory=memory

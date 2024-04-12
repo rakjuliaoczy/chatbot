@@ -1,242 +1,303 @@
 [
     {
-        "question": "Sounds nice! Where is it?",
-        "answer": "It will be hosted at the local park in den Hague.",
-        "context": "Bot: Sounds nice! Where is it? User: It will be hosted at the local park.",
+        "question": "its my friends birthday",
+        "answer": "Sounds nice! Where is it?",
+        "context": "User: its my friends birthday Bot: Sounds nice! Where is it?",
+        "topic": "occasion"
+    },
+    {
+        "question": "It will be hosted at the local park in den Hague.",
+        "answer": "I like this area. Are you looking for a DJ, band, ensemble, or solo artist?",
+        "context": "User: its my friends birthday Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist?",
         "topic": "location"
     },
     {
-        "question": "I like this area. Are you looking for a DJ, band, ensemble or solo artist?",
-        "answer": "I'm looking for a solo artist.",
-        "context": "Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble or solo artist? User: I'm looking for a solo artist.",
+        "question": "I'm looking for a solo artist.",
+        "answer": "Good choice. Which music genre are you interested in?",
+        "context": "User: its my friends birthday Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in?",
         "topic": "formation"
     },
     {
-        "question": "Good choice. Which music genre are you interested in?",
-        "answer": "I'm interested in classical music.",
-        "context": "Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in? User: I'm interested in classical music.",
+        "question": "I'm interested in classical music.",
+        "answer": "Nice. How much would you like to pay?",
+        "context": "User: its my friends birthday Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in? User: I'm interested in classical music. Bot: Nice. How much would you like to pay?",
         "topic": "genre"
     },
     {
-        "question": "Nice. How much would you like to pay?",
-        "answer": "I have a budget of $800.",
-        "context": "Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in? User: I'm interested in classical music. Bot: Nice. How much would you like to pay? User: I have a budget of $800.",
+        "question": "I have a budget of $800.",
+        "answer": "Noted. Check the website. Here are some artists that might interest you.",
+        "context": "User: its my friends birthday Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in? User: I'm interested in classical music. Bot: Nice. How much would you like to pay? User: I have a budget of $800. Bot: Noted. Check the website. Here are some artists that might interest you.",
         "topic": "price"
     },
     {
-        "question": "Noted. Check the website. Here are some artists that might interest you.",
-        "answer": "",
-        "context": "Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in? User: I'm interested in classical music. Bot: Nice. How much would you like to pay? User: I have a budget of $800. Bot: Noted. Check the website. Here are some artists that might interest you.",
+        "question": "thanks",
+        "answer": "No problem.",
+        "context": "User: its my friends birthday Bot: Sounds nice! Where is it? User: It will be hosted at the local park in den Hague. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: I'm looking for a solo artist. Bot: Good choice. Which music genre are you interested in? User: I'm interested in classical music. Bot: Nice. How much would you like to pay? User: I have a budget of $800. Bot: Noted. Check the website. Here are some artists that might interest you. User: thanks Bot: No problem.",
         "topic": "conclusion"
     },
+
+
     {
-        "question": "That sounds fantastic! Can you tell me the venue for this event?",
-        "answer": "The event will take place in the community park in Amsterdam.",
-        "context": "Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park.",
+        "question": "its an anniversary",
+        "answer": "That sounds fantastic! Can you tell me the venue for this event?",
+        "context": "User: its an anniversary Bot: That sounds fantastic! Can you tell me the venue for this event?",
+        "topic": "occasion"
+    },
+    {
+        "question": "The event will take place in the community park in Amsterdam.",
+        "answer": "Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer?",
+        "context": "User: its an anniversary Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer?",
         "topic": "location"
     },
     {
-        "question": "Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer?",
-        "answer": "Actually, I'm thinking of hiring a solo performer.",
-        "context": "Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer.",
+        "question": "Actually, I'm thinking of hiring a solo performer.",
+        "answer": "Excellent choice. Do you have a particular music style in mind for this solo performer?",
+        "context": "User: its an anniversary Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer?",
         "topic": "formation"
     },
     {
-        "question": "Excellent choice. Do you have a particular music style in mind for this solo performer?",
-        "answer": "Yes, I would prefer classical music for the event.",
-        "context": "Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer? User: Yes, I would prefer classical music for the event.",
+        "question": "Yes, I would prefer classical music for the event.",
+        "answer": "Sounds elegant. What's your budget for booking the artist?",
+        "context": "User: its an anniversary Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer? User: Yes, I would prefer classical music for the event. Bot: Sounds elegant. What's your budget for booking the artist?",
         "topic": "genre"
     },
     {
-        "question": "Sounds elegant. What's your budget for booking the artist?",
-        "answer": "My budget is around $800.",
-        "context": "Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer? User: Yes, I would prefer classical music for the event. Bot: Sounds elegant. What's your budget for booking the artist? User: My budget is around $800.",
+        "question": "My budget is around $800.",
+        "answer": "Understood. I've curated a selection that fits your criteria.",
+        "context": "User: its an anniversary Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer? User: Yes, I would prefer classical music for the event. Bot: Sounds elegant. What's your budget for booking the artist? User: My budget is around $800. Bot: Understood. I've curated a selection that fits your criteria.",
         "topic": "price"
     },
     {
-        "question": "Understood. I've curated a selection that fits your criteria.",
-        "answer": "",
-        "context": "Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer? User: Yes, I would prefer classical music for the event. Bot: Sounds elegant. What's your budget for booking the artist? User: My budget is around $800. Bot: Understood. I've curated a selection that fits your criteria.",
+        "question": "thank you",
+        "answer": "Sure!",
+        "context": "User: its an anniversary Bot: That sounds fantastic! Can you tell me the venue for this event? User: The event will take place in the community park in Amsterdam. Bot: Great location! What kind of music performance are you envisioning? A DJ, a full band, a small group, or perhaps a solo performer? User: Actually, I'm thinking of hiring a solo performer. Bot: Excellent choice. Do you have a particular music style in mind for this solo performer? User: Yes, I would prefer classical music for the event. Bot: Sounds elegant. What's your budget for booking the artist? User: My budget is around $800. Bot: Understood. I've curated a selection that fits your criteria. User: thank you Bot: Sure!",
         "topic": "conclusion"
     },
+
+
     {
-        "question": "Cool! Could you tell me where is it?",
-        "answer": "Monachium",
-        "context": "Bot: Cool! Could you tell me where is it? User: Monachium",
+        "question": "its a work event",
+        "answer": "Cool! Could you tell me where is it?",
+        "context": "User: its a work event Bot: Cool! Could you tell me where is it?",
+        "topic": "occasion"
+    },
+    {
+        "question": "Monachium",
+        "answer": "Sounds promising. Are you looking for a DJ, band, ensemble or solo artist?",
+        "context": "User: its a work event Bot: Cool! Could you tell me where is it? User: Monachium Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist?",
         "topic": "location"
     },
     {
-        "question": "Sounds promising. Are you looking for a DJ, band, ensemble or solo artist?",
-        "answer": "i dont care.",
-        "context": "Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care.",
+        "question": "i dont care.",
+        "answer": "Okay then. Which music genre are you interested in?",
+        "context": "User: its a work event Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in?",
         "topic": "formation"
     },
     {
-        "question": "Okay then. Which music genre are you interested in?",
-        "answer": "maybe hip hop or rock",
-        "context": "Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in? User: maybe hip hop or rock",
+        "question": "maybe hip hop or rock",
+        "answer": "Okay. How much would you like to pay?",
+        "context": "User: its a work event Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in? User: maybe hip hop or rock Bot: Okay. How much would you like to pay?",
         "topic": "genre"
     },
     {
-        "question": "Okay. How much would you like to pay?",
-        "answer": "i dont wont to spend more than 1000 euros",
-        "context": "Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in? User: maybe hip hop or rock. Bot: Okay. How much would you like to pay? User: i dont wont to spend more than 1000 euros",
+        "question": "i dont wont to spend more than 1000 euros",
+        "answer": "Noted. Here are some artists that might interest you.",
+        "context": "User: its a work event Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in? User: maybe hip hop or rock. Bot: Okay. How much would you like to pay? User: i dont wont to spend more than 1000 euros Bot: Noted. Here are some artists that might interest you.",
         "topic": "price"
     },
     {
-        "question": "Noted. Here are some artists that might interest you.",
-        "answer": "",
-        "context": "Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in? User: maybe hip hop or rock. Bot: Okay. How much would you like to pay? User: i dont wont to spend more than 1000 euros. Bot: Noted. Here are some artists that might interest you.",
+        "question": "thanks",
+        "answer": "No worries.",
+        "context": "User: its a work event Bot: Cool! Could you tell me where is it? User: Monachium. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: i dont care. Bot: Okay then. Which music genre are you interested in? User: maybe hip hop or rock. Bot: Okay. How much would you like to pay? User: i dont wont to spend more than 1000 euros. Bot: Noted. Here are some artists that might interest you. User: thanks Bot: No worries.",
         "topic": "conclusion"
     },
+
+
     {
-        "question": "That sounds great! Can you share the location of the event?",
-        "answer": "Monachium",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Monachium",
+        "question": "its a suprise birthday party for my mom",
+        "answer": "That sounds great! Can you share the location of the event?",
+        "context": "User: its a suprise birthday party for my mom Bot: That sounds great! Can you share the location of the event?",
+        "topic": "occasion"
+    },
+    {
+        "question": "Groningen",
+        "answer": "Interesting. What type of musical formation are you considering? DJ, band, ensemble, or a solo artist?",
+        "context": "Bot: That sounds great! Can you share the location of the event? User: Groningen",
         "topic": "location"
     },
     {
-        "question": "Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
-        "answer": "i dont care.",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Monachium. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: i dont care.",
+        "question": "i dont care.",
+        "answer": "Alright. Do you have a preference for the music genre? Hip hop, rock, or something else?",
+        "context": "User: its a suprise birthday party for my mom Bot: That sounds great! Can you share the location of the event? User: Groningen. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else?",
         "topic": "formation"
     },
     {
-        "question": "Alright. Do you have a preference for the music genre? Hip hop, rock, or something else?",
-        "answer": "maybe hip hop or rock",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Monachium. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else? User: maybe hip hop or rock",
+        "question": "maybe hip hop or rock",
+        "answer": "Got it. What's your budget limit for this?",
+        "context": "User: its a suprise birthday party for my mom Bot: That sounds great! Can you share the location of the event? User: Groningen. Bot: Interesting. What type of musical formation are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else? User: maybe hip hop or rock Bot: Got it. What's your budget limit for this?",
         "topic": "genre"
     },
     {
-        "question": "Got it. What's your budget limit for this?",
-        "answer": "i dont wont to spend more than 1000 euros",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Monachium. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else? User: maybe hip hop or rock. Bot: Got it. What's your budget limit for this? User: i dont wont to spend more than 1000 euros",
+        "question": "i dont wont to spend more than 1000 euros",
+        "answer": "Understood. I'll show you some artists that fit your criteria.",
+        "context": "User: its a suprise birthday party for my mom Bot: That sounds great! Can you share the location of the event? User: Groningen. Bot: Interesting. What type of musical formation are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else? User: maybe hip hop or rock. Bot: Got it. What's your budget limit for this? User: i dont wont to spend more than 1000 euros Bot: Understood. I'll show you some artists that fit your criteria.",
         "topic": "price"
     },
     {
-        "question": "Understood. I'll show you some artists that fit your criteria.",
-        "answer": "",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Monachium. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else? User: maybe hip hop or rock. Bot: Got it. What's your budget limit for this? User: i dont wont to spend more than 1000 euros. Bot: Understood. I'll show you some artists that fit your criteria.",
+        "question": "thank you!",
+        "answer": "It was a pleasure.",
+        "context": "User: its a suprise birthday party for my mom Bot: That sounds great! Can you share the location of the event? User: Groningen. Bot: Interesting. What type of musical formation are you considering? DJ, band, ensemble, or a solo artist? User: i dont care. Bot: Alright. Do you have a preference for the music genre? Hip hop, rock, or something else? User: maybe hip hop or rock. Bot: Got it. What's your budget limit for this? User: i dont wont to spend more than 1000 euros. Bot: Understood. I'll show you some artists that fit your criteria. User: thank you! Bot: It was a pleasure.",
         "topic": "conclusion"
     },
+
+
     {
-        "question": "Cool! Could you tell me where is it?",
-        "answer": "Berlin",
-        "context": "Bot: Cool! Could you tell me where is it? User: Berlin",
+        "question": "its a graduation of my daughter",
+        "answer": "Cool! Could you tell me where is it?",
+        "context": "User: its a graduation of my daughter Bot: Cool! Could you tell me where is it?",
+        "topic": "occasion"
+    },
+    {
+        "question": "Berlin",
+        "answer": "Sounds promising. Are you looking for a DJ, band, ensemble or solo artist?",
+        "context": "User: its a graduation of my daughter Bot: Cool! Could you tell me where is it? User: Berlin Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist?",
         "topic": "location"
     },
     {
-        "question": "Sounds promising. Are you looking for a DJ, band, ensemble or solo artist?",
-        "answer": "I'm not sure yet.",
-        "context": "Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet.",
+        "question": "I'm not sure yet.",
+        "answer": "Okay then. Which music genre are you interested in?",
+        "context": "User: its a graduation of my daughter Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in?",
         "topic": "formation"
     },
     {
-        "question": "Okay then. Which music genre are you interested in?",
-        "answer": "Maybe electronic or indie.",
-        "context": "Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in? User: Maybe electronic or indie.",
+        "question": "Maybe electronic or indie.",
+        "answer": "Okay. How much would you like to pay?",
+        "context": "User: its a graduation of my daughter Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in? User: Maybe electronic or indie. Bot: Okay. How much would you like to pay?",
         "topic": "genre"
     },
     {
-        "question": "Okay. How much would you like to pay?",
-        "answer": "I'm flexible, but not more than $1000.",
-        "context": "Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in? User: Maybe electronic or indie. Bot: Okay. How much would you like to pay? User: I'm flexible, but not more than $1000.",
+        "question": "I'm flexible, but not more than $1000.",
+        "answer": "Noted. Here are some artists that might interest you.",
+        "context": "User: its a graduation of my daughter Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in? User: Maybe electronic or indie. Bot: Okay. How much would you like to pay? User: I'm flexible, but not more than $1000. Bot: Noted. Here are some artists that might interest you.",
         "topic": "price"
     },
     {
-        "question": "Noted. Here are some artists that might interest you.",
-        "answer": "",
-        "context": "Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in? User: Maybe electronic or indie. Bot: Okay. How much would you like to pay? User: I'm flexible, but not more than $1000. Bot: Noted. Here are some artists that might interest you.",
+        "question": "thanks",
+        "answer": "You're welcome.",
+        "context": "User: its a graduation of my daughter Bot: Cool! Could you tell me where is it? User: Berlin. Bot: Sounds promising. Are you looking for a DJ, band, ensemble or solo artist? User: I'm not sure yet. Bot: Okay then. Which music genre are you interested in? User: Maybe electronic or indie. Bot: Okay. How much would you like to pay? User: I'm flexible, but not more than $1000. Bot: Noted. Here are some artists that might interest you. User: thanks Bot: You're welcome.",
         "topic": "conclusion"
     },
+
+
     {
-        "question": "That sounds great! Can you share the location of the event?",
-        "answer": "Miami",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Miami",
+        "question": "its an anniversary of my company",
+        "answer": "That sounds great! Can you share the location of the event?",
+        "context": "User: its an anniversary of my company Bot: That sounds great! Can you share the location of the event?",
+        "topic": "occasion"
+    },
+    {
+        "question": "Miami",
+        "answer": "Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
+        "context": "User: its an anniversary of my company Bot: That sounds great! Can you share the location of the event? User: Miami Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
         "topic": "location"
     },
     {
-        "question": "Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
-        "answer": "I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration.",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration.",
+        "question": "I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration.",
+        "answer": "Alright. Do you have a preference for the music genre?",
+        "context": "User: its an anniversary of my company Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre?",
         "topic": "formation"
     },
     {
-        "question": "Alright. Do you have a preference for the music genre?",
-        "answer": "I'm not picky, but something upbeat would be nice.",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice.",
+        "question": "I'm not picky, but something upbeat would be nice.",
+        "answer": "Got it. What's your budget limit for this?",
+        "context": "User: its an anniversary of my company Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice. Bot: Got it. What's your budget limit for this?",
         "topic": "genre"
     },
     {
-        "question": "Got it. What's your budget limit for this?",
-        "answer": "I haven't decided yet, but I'll try to keep it reasonable.",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice. Bot: Got it. What's your budget limit for this? User: I haven't decided yet, but I'll try to keep it reasonable.",
+        "question": "I haven't decided yet, but I'll try to keep it reasonable.",
+        "answer": "Understood. I'll keep that in mind while suggesting artists.",
+        "context": "User: its an anniversary of my company Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice. Bot: Got it. What's your budget limit for this? User: I haven't decided yet, but I'll try to keep it reasonable. Bot: Understood. I'll keep that in mind while suggesting artists.",
         "topic": "price"
     },
     {
-        "question": "Understood. I'll keep that in mind while suggesting artists.",
-        "answer": "",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice. Bot: Got it. What's your budget limit for this? User: I haven't decided yet, but I'll try to keep it reasonable. Bot: Understood. I'll keep that in mind while suggesting artists.",
+        "question": "amazing",
+        "answer": "I'm glad to help.",
+        "context": "User: its an anniversary of my company Bot: That sounds great! Can you share the location of the event? User: Miami. Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: I'm not sure. It's for my sister's birthday and my father's 50th birthday celebration. Bot: Alright. Do you have a preference for the music genre? User: I'm not picky, but something upbeat would be nice. Bot: Got it. What's your budget limit for this? User: I haven't decided yet, but I'll try to keep it reasonable. Bot: Understood. I'll keep that in mind while suggesting artists. User: amazing Bot: I'm glad to help.",
         "topic": "conclusion"
     },
+
     {
-        "question": "That sounds great! Can you share the location of the event?",
-        "answer": "Chicago, I guess?",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess?",
+        "question": "we are celebrating a game",
+        "answer": "That sounds great! Can you share the location of the event?",
+        "context": "User: we are celebrating a game Bot: That sounds great! Can you share the location of the event?",
+        "topic": "occasion"
+    },
+    {
+        "question": "Chicago, I guess?",
+        "answer": "Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
+        "context": "User: we are celebrating a game Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
         "topic": "location"
     },
     {
-        "question": "Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist?",
-        "answer": "Hmm, not sure, maybe just a DJ or something?",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something?",
+        "question": "Hmm, not sure, maybe just a DJ or something?",
+        "answer": "Alright. Do you have a preference for the music genre?",
+        "context": "User: we are celebrating a game Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre?",
         "topic": "formation"
     },
     {
-        "question": "Alright. Do you have a preference for the music genre?",
-        "answer": "I don't know, something fun?",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre? User: I don't know, something fun?",
+        "question": "I don't know, something fun?",
+        "answer": "Got it. What's your budget limit for this?",
+        "context": "User: we are celebrating a game Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre? User: I don't know, something fun? Bot: Got it. What's your budget limit for this?",
         "topic": "genre"
     },
     {
-        "question": "Got it. What's your budget limit for this?",
-        "answer": "Ehh, probably not too much, maybe like a few hundred bucks?",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre? User: I don't know, something fun? Bot: Got it. What's your budget limit for this? User: Ehh, probably not too much, maybe like a few hundred bucks?",
+        "question": "Ehh, probably not too much, maybe like a few hundred bucks?",
+        "answer": "Understood. I'll keep that in mind while suggesting artists.",
+        "context": "User: we are celebrating a game Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre? User: I don't know, something fun? Bot: Got it. What's your budget limit for this? User: Ehh, probably not too much, maybe like a few hundred bucks? Bot: Understood. I'll keep that in mind while suggesting artists.",
         "topic": "price"
     },
     {
-        "question": "Understood. I'll keep that in mind while suggesting artists.",
-        "answer": "",
-        "context": "Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre? User: I don't know, something fun? Bot: Got it. What's your budget limit for this? User: Ehh, probably not too much, maybe like a few hundred bucks? Bot: Understood. I'll keep that in mind while suggesting artists.",
+        "question": "",
+        "answer": "No problem.",
+        "context": "User: we are celebrating a game Bot: That sounds great! Can you share the location of the event? User: Chicago, I guess? Bot: Interesting. What type of musical act are you considering? DJ, band, ensemble, or a solo artist? User: Hmm, not sure, maybe just a DJ or something? Bot: Alright. Do you have a preference for the music genre? User: I don't know, something fun? Bot: Got it. What's your budget limit for this? User: Ehh, probably not too much, maybe like a few hundred bucks? Bot: Understood. I'll keep that in mind while suggesting artists. User: Bot No problem.",
         "topic": "conclusion"
     },
+
+
     {
-        "question": "Sounds nice! Where is it?",
-        "answer": "In Berlin.",
-        "context": "Bot: Sounds nice! Where is it? User: In Berlin.",
+        "question": "i got a promotion at work",
+        "answer": "Sounds nice! Where is it?",
+        "context": "User: i got a promotion at work Bot: Sounds nice! Where is it?",
+        "topic": "occasion"
+    },
+    {
+        "question": "In Berlin.",
+        "answer": "I like this area. Are you looking for a DJ, band, ensemble, or solo artist?",
+        "context": "User: i got a promotion at work Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist?",
         "topic": "location"
     },
     {
-        "question": "I like this area. Are you looking for a DJ, band, ensemble, or solo artist?",
-        "answer": "Solo artist.",
-        "context": "Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist.",
+        "question": "Solo artist.",
+        "answer": "Good choice. Which music genre are you interested in?",
+        "context": "User: i got a promotion at work Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in?",
         "topic": "formation"
     },
     {
-        "question": "Good choice. Which music genre are you interested in?",
-        "answer": "Pop.",
-        "context": "Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in? User: Pop.",
+        "question": "Pop.",
+        "answer": "Nice. How much would you like to pay?",
+        "context": "User: i got a promotion at work Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in? User: Pop. Bot: Nice. How much would you like to pay?",
         "topic": "genre"
     },
     {
-        "question": "Nice. How much would you like to pay?",
-        "answer": "$600.",
-        "context": "Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in? User: Pop. Bot: Nice. How much would you like to pay? User: $600.",
+        "question": "$600.",
+        "answer": "Noted. Check the website. Here are some artists that might interest you.",
+        "context": "User: i got a promotion at work Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in? User: Pop. Bot: Nice. How much would you like to pay? User: $600. Bot: Noted. Check the website. Here are some artists that might interest you.",
         "topic": "price"
     },
     {
-        "question": "Noted. Check the website. Here are some artists that might interest you.",
-        "answer": "",
-        "context": "Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in? User: Pop. Bot: Nice. How much would you like to pay? User: $600. Bot: Noted. Check the website. Here are some artists that might interest you.",
+        "question": "thank you very much",
+        "answer": "Sure!",
+        "context": "User: i got a promotion at work Bot: Sounds nice! Where is it? User: In Berlin. Bot: I like this area. Are you looking for a DJ, band, ensemble, or solo artist? User: Solo artist. Bot: Good choice. Which music genre are you interested in? User: Pop. Bot: Nice. How much would you like to pay? User: $600. Bot: Noted. Check the website. Here are some artists that might interest you. User: thank you very much Bot: Sure!",
         "topic": "conclusion"
     }
 ]
