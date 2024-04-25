@@ -2,7 +2,7 @@ import os
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chains import ConversationalRetrievalChain
+from langchain.chains import ConversationalRetrievalChain, RetrievalQA
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, JSONLoader
 from langchain_community.llms import CTransformers
 import chainlit as cl
@@ -15,7 +15,6 @@ import torch
 from llama_cpp import Llama
 import random
 torch.device('cpu')
-
 class CSVChatBot:
 
     def __init__(self):
@@ -59,14 +58,14 @@ class CSVChatBot:
                              loader_cls=CSVLoader)
 
         documents = loader.load()
-        print('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',documents)
+        #print('BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',documents)
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=400,#400,
                                                    chunk_overlap=50)#0)
         texts = text_splitter.split_documents(documents)
 
         #embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2',
                                        #model_kwargs={'device': 'cpu'})
-        embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+        embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2", model_kwargs={'device': 'cpu'})
         db = FAISS.from_documents(texts, embeddings)
         db.save_local("self.db_faiss_path")
 
@@ -74,10 +73,12 @@ class CSVChatBot:
         #Load the locally downloaded model here
         llm = CTransformers(
             #api_key="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",
-            model="llama-2-13b-chat.Q5_K_M.gguf",
+            model="llama-2-7b-chat.ggmlv3.q8_0.bin",
             model_type="llama",
             max_new_tokens=2000,
-            temperature=0
+            temperature=0.5,
+            gpu_layers=32,
+            device='cuda'
         )
         #llm = Llama(model_path="mistral-7b-instruct-v0.1.Q5_K_M.gguf",verbose=True)
         return llm
@@ -97,17 +98,34 @@ class CSVChatBot:
         # db = FAISS.from_documents(texts, embeddings)
         db = FAISS.load_local("self.db_faiss_path", embeddings, allow_dangerous_deserialization=True)
         # initializing the conversational chain
-
+        #You are a customer service chatbot for an online artist booking company called Gigstarter. You must provide answers about all the five topics: location (where it is), formation (DJ, band, ensemble, or solo artist?), genre type (music genre a customer is interested in), price (how much a customer is willing to pay).
+        #After location (where it is), you answer about formation (DJ, band, ensemble, or solo artist?). After formation you answer about genre type (Interesting choice! Which music genre are you interested in?). After genre type you answer about price (how much a customer is willing to pay). Provide each new answer with different topic SEPARATELY after receiving each user input. Finally, after responding about the price (how much a customer is willing to pay) say "Noted. I'll show you some artists that might interest you." or "Sure thing!. I'll show you some artists that fit your criteria." and DO NOT ask any more questions. 
         #Design Prompt Template
-        template = """You are a customer service chatbot for an online artist booking company called Gigstarter. You ask a series of questions to know the customer preferences.
-        As your Answer, use the second line from the following context:
-        {context}
-         
+        template = """You are a customer service chatbot for an online artist booking company called Gigstarter.
+        Here’s an example of the whole conversation you will have with a customer:
+        Human:
+        Assistant: Cool! Could you tell me where is it?
+        Human:
+        Assistant: Fun! Are you looking for a DJ, band, ensemble or solo artist?
+        Human:
+        Assistant: Great! Which music genre are you interested in?
+        Human:
+        Assistant: Okay! And the final question is how much would you like to pay?
+        Human:
+        Assistant: Noted. I'll show you some artists that fit your criteria.
 
-        Question: Human question
+        USE the Answer from the below context to formulate your Answer:
+
+        {context}
+
+
+        Answer the customer's questions ONLY using the source data provided. If you are unsure, say "I don't know, please call our customer support". Use engaging, courteous, and professional language similar to a customer representative.
+        Keep your answers concise. 
+
+        Question: {question}
 
         Answer: """
-
+        
         #Intiliaze prompt using prompt template via LangChain
         prompt = PromptTemplate(template=template, input_variables=["context", "question"])
         print(
@@ -119,14 +137,16 @@ class CSVChatBot:
             )
         )
 
-        chain_type_kwargs = {"prompt": prompt}
+        chain_type_kwargs = {"verbose": True, "prompt": prompt}
 
-        memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-        conversational_chain = ConversationalRetrievalChain.from_llm( llm=self.load_llm(),
-                                                                      retriever=db.as_retriever(search_kwargs={"k": 1}),
-                                                                      combine_docs_chain_kwargs={"prompt": prompt},
-                                                                      verbose=True,
-                                                                      memory=memory
+        # memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+        conversational_chain = RetrievalQA.from_chain_type( llm=self.load_llm(),
+                                                                      retriever=db.as_retriever(search_type="similarity", search_kwargs={"k": 3}),
+                                                                      chain_type_kwargs=chain_type_kwargs,
+                                                                      chain_type="stuff",
+                                                                    #   verbose=True,
+                                                                    #   memory=memory,
+                                                                    #   rephrase_question=False
                                                                       )
 
         return conversational_chain
@@ -137,7 +157,7 @@ def intialize_chain():
     conversational_chain = bot.conversational_chain()
     return conversational_chain
 
-chat_history = []
+# chat_history = []
 
 chain = intialize_chain()
 
@@ -163,14 +183,15 @@ async def start():
     intros = ["I'm Snuppy, your personal assistant", "I'm Snuppy, here to assist you", "I'm Snuppy, at your service", "I'm Snuppy, excited to meet you"]
     help_statements = ["I hope I can help you find the best artist", "I'm here to assist you in finding the perfect artist", "I'm here to help you in finding the best artist", "Please let me know what you are looking for and I hope I can help you"]
     occasion_question = "What is the occasion you're searching for an artist for?"
-
+    emojis = ["🎷","🥁" ,"🎸"]
     # Randomly select phrases
     greeting = random.choice(greetings)
     intro = random.choice(intros)
     help_statement = random.choice(help_statements)
+    emoji = random.choice(emojis)
 
     # Construct the message content
-    msg_content = f"{greeting}! {intro}. {help_statement}. {occasion_question}"
+    msg_content = f"{greeting}!{emoji} {intro}. {help_statement}. {occasion_question}"
     msg.content = msg_content
     await msg.update()
 
@@ -185,18 +206,29 @@ async def start():
 
 @cl.on_message
 async def main(message):
-    global conversation_state
-    global collected_data
+    # global conversation_state
+    # global collected_data
+    # global chat_history 
+
+    # query = input('User: ')
+    # response = chain.run(query)
+    # chat_history.append(response)  # Append the answer to chat history
+    # print("Snuppy: ", response)
 
     chain = cl.user_session.get("chain")
     cb = cl.AsyncLangchainCallbackHandler(
         stream_final_answer=False, answer_prefix_tokens=["FINAL", "ANSWER"]
     )
     cb.answer_reached = True
-    res = await chain.acall({"question": message.content, "chat_history": chat_history}, callbacks=[cb])
-    answer = res["answer"]
-    chat_history.append(answer)
-
+    res = await chain.acall({"query": message.content}, callbacks=[cb])
+    answer = chain.run(message.content)
+    # chat_history.append(answer)
+    #last_user_input = chat_history[-2] if chat_history else ""
+    print('User message:', message.content)
+    print('Answer:',answer)
+    #print('last_user_input', last_user_input)
+    # print('chat history', chat_history)
+    #chat_history = chain.get_chat_history()
     # Update conversation state and collected data
     #collected_data[conversation_state] = message.content
     #print("Collected data dict: ", collected_data)
@@ -231,6 +263,6 @@ async def main(message):
     
 # while(True):
 #     query = input('User: ')
-#     response = chain({"question": query, "chat_history": chat_history})
-#     chat_history.append(response["answer"])  # Append the answer to chat history
-#     print(response["answer"])
+#     response = chain.run(query)
+#     chat_history.append(response)  # Append the answer to chat history
+#     print("Snuppy: ", response)
