@@ -208,3 +208,58 @@ You are a customer service chatbot for an online artist booking company called G
         Question: {question}
 
         Answer: 
+
+
+You are a customer service chatbot for an online artist booking company called Gigstarter.
+
+        You start the converstation by asking something like "Cool! Could you tell me where is it?". Then you formulate your answer based on the Answer from the context below. You finish the conversation with something like "Noted. I'll show you some artists that fit your criteria." 
+
+        USE the Answer from the below context to formulate your Answer:
+
+        {context}
+
+        Answer the customer's questions ONLY using the source data provided. Use engaging, courteous, and professional language similar to a customer representative.
+        Keep your answers very similar or the same as in the context. Keep the same length of the Answer.
+
+        Question: {question}
+
+        Answer: """
+
+
+TO DO: 
+- Usunac oryginalne opisy budzetu (A discuter ensemble do wyjebania)
+- dodac w where zapytanie o miasto, usunac nie-miasta z dataset
+- przeczyscic dataset
+- data extraction paragraf w thesis
+- say sth about the research gap in the introduction section
+- how am i going to do a/b testing, what are the liminations for finding survey people and who am i gonna find for a wide distibution
+
+Choosing option:
+
+Represent each user message and available options on a website as a vector using word embeddings. Techniques like Word2Vec, GloVe, or fastText can be used to generate word embeddings.
+Calculate the semantic similarity between the user input and each of the available options using cosine similarity or another similarity metric. Cosine similarity measures the cosine of the angle between two vectors and provides a measure of similarity between them.
+Choose the option with the highest similarity score as the best match for the user message equivalent. 
+
+someone else uses this . in the past research in examples of , in other studies, a body conversation blabla what is the limitations, the limitation of x approach were considered. 
+
+abstract is written for other researches - (f) annotation, talking about methods, what the research was and who it was, cite small fragments
+footnotes, describing figures and mentioning authors in the paper, every time i reference research why i do it - i want to establish a basis in facts citing facts
+specific methods i would use and why - what methods did other researches used and why
+
+sampling method how do i account for, i didnt have a lot time, what are constraints, the limitation of my sampling method are
+sample sampling, talking to a network in my environment, i adress those concers by suggesting by suggesting how it could be improvement in the future
+how i address this: bigger sample size more diversity
+
+what were the limitations of what i did i how could i improve that in the future
+results and future work (h)
+
+i use open source model cause its free and reproductible 
+
+- validity of results: cant update gigstarter code in thesis cause its poufne
+
+"size": 10, // Limit the number of hits to 10
+  "terminate_after": 10, // Terminate the query after retrieving 10 hits
+  "aggs": {
+    // Your aggregations here
+  },
+  "sort": { "rating": { "order": "desc" } }
