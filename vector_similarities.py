@@ -12,13 +12,13 @@ import re
 # print(user_inputs)
 
 occasions = pd.read_csv('data_similarity_search/occasions.csv')
-locations = pd.read_csv('data_similarity_search/locations.csv')
+locations = pd.read_csv('data_similarity_search/dutch_locations.csv') # I am using dutch locations instead of all (16s reduced to 2s)
 formations = pd.read_csv('data_similarity_search/formations.csv')
 genres = pd.read_csv('data_similarity_search/genres.csv')
 
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
-translator = GoogleTranslator(source='auto', target='en')
+#translator = GoogleTranslator(source='auto', target='en')
 
 occasions_list = list(set(occasions['name']))
 locations_list = list(set(locations['city']))
@@ -27,10 +27,6 @@ genres_list = list(set(genres['name']))
 
 budgets_list = ['All prices', '€0 to €200', '€201 to €400', '€401 to €600', '€601 to €1000', '€1001 +']
 
-occasions_list = [translator.translate(occasion) for occasion in occasions_list]
-locations_list = [translator.translate(location) for location in locations_list]
-formations_list = [translator.translate(formation)  for formation in formations_list]
-genres_list = [translator.translate(genre)  for genre in genres_list]
 
 #user_inputs = ['birthday party', 'Amsterdam', 'dj', 'pop', '200 euros']
 
@@ -127,4 +123,5 @@ def all_options(user_inputs):
     combined_output = list(words_to_options(user_inputs)) + [budget_to_option(user_inputs[4])]
     return combined_output
 
-#print(all_options(user_inputs))
+# user_inputs = ['birthday party', 'Groningen', 'dj', 'pop', '200 euros']
+# print(all_options(user_inputs))
