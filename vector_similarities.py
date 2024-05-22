@@ -30,8 +30,7 @@ budgets_list = ['All prices', '€0 to €200', '€201 to €400', '€401 to �
 
 #user_inputs = ['birthday party', 'Amsterdam', 'dj', 'pop', '200 euros']
 
-def words_to_options(user_inputs): #words_to_options(user_inputs) , user_inputs = ['birthday party', 'Amsterdam', 'dj', 'pop', '200 euros']     
-
+def words_to_options(user_inputs, threshold_form=0.48, threshold_gen=0.40, n_top_genres=4):
     # Encode phrases and target phrase
     occasion_embeddings = model.encode(occasions_list, convert_to_tensor=True)
     location_embeddings = model.encode(locations_list, convert_to_tensor=True)
@@ -61,7 +60,34 @@ def words_to_options(user_inputs): #words_to_options(user_inputs) , user_inputs 
     most_similar_phrase_formation = formations_list[most_similar_index_formation]
     most_similar_phrase_genre = genres_list[most_similar_index_genre]
 
-    return most_similar_phrase_occasion, most_similar_phrase_location, most_similar_phrase_formation, most_similar_phrase_genre
+    similarity_scores_other_formations = [(formations_list[i], similarities_formation[i]) for i in range(len(formations_list)) if similarities_formation[i] > threshold_form and i != most_similar_index_formation]
+
+    # Collect similarity scores for other options in genres above the threshold
+    similarity_scores_other_genres = [(genres_list[i], similarities_genre[i]) for i in range(len(genres_list)) if similarities_genre[i] > threshold_gen and i != most_similar_index_genre]
+    
+    similar_formations = []
+    similar_genres = []
+
+    # Collect similarity scores for other options in formations above the threshold
+    for formation, score in similarity_scores_other_formations:
+        if score > threshold_form:
+            similar_formations.append(formation)
+
+    # Collect similarity scores for other options in genres above the threshold
+    for genre, score in similarity_scores_other_genres:
+        if score > threshold_gen:
+            similar_genres.append(genre)
+
+    similarity_scores_other_genres = [(genres_list[i], similarities_genre[i]) for i in range(len(genres_list)) if similarities_genre[i] > threshold_gen and i != most_similar_index_genre]
+    sorted_genres = sorted(similarity_scores_other_genres, key=lambda x: x[1], reverse=True)
+
+    # Get the first 5 genres with the highest scores above the threshold
+    top_genres = [genre for genre, score in sorted_genres if score > threshold_gen][:n_top_genres]
+
+    # Return results in the desired format
+    return [most_similar_phrase_occasion, most_similar_phrase_location, [most_similar_phrase_formation] + similar_formations, [most_similar_phrase_genre] + top_genres]
+
+
 
     #Print all phrases with their similarity scores for debugging
     # for phrase, similarity in zip(phrases, similarities):

@@ -18,7 +18,7 @@ from chainlit.session import WebsocketSession
 from fastapi import FastAPI
 import requests
 from pydantic import BaseModel
-#import vector_similarities
+import vector_similarities
 
 app = FastAPI()
 
@@ -157,18 +157,10 @@ async def main(message):#, session_id: str):
             # If not, proceed with the regular response
             response = bot.get_response(user_input)
 
-    # if len(user_inputs) == 5:
-    #     print(user_inputs)
-    #     user_options = vector_similarities.all_options(user_inputs)
-    #     print(user_options)
-    
-    # endpoint_url = "http://localhost:8000/chatbot"  # Update with your actual URL
-
-    # # Send a POST request with the user's message
-    # response = requests.post(endpoint_url, json={"message": user_input})
-
-    # # Print the response from the FastAPI endpoint
-    # print(response.json())
+    if len(user_inputs) == 5:
+        print(user_inputs)
+        user_options = vector_similarities.all_options(user_inputs)
+        print(user_options)
 
     await asyncio.sleep(1.3)
     await cl.Message(content=response).send()
