@@ -40,6 +40,8 @@ multi_modal = true
 [UI]
 # Name of the app and chatbot.
 name = "Chatbot"
+custom_css = 'public/stylesheet.css'
+custom_js = 'public/js_script.js'
 
 # Show the readme while the thread is empty.
 show_readme_as_default = true
